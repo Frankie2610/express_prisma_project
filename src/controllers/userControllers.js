@@ -58,9 +58,35 @@ const getPostedPhotoList = async (req, res) => {
     }
 }
 
+// update thông tin cá nhân của user
+const updateUser = async (req, res) => {
+    const { token } = req.headers;
+    const { user_id } = checkToken(token).data
+    const { email, password, username, age, avatar } = req.body
+    try {
+        const newData = {
+            email: email,
+            mat_khau: password,
+            ho_ten: username,
+            tuoi: age,
+            anh_dai_dien: avatar
+
+        }
+        await prisma.nguoi_dung.update({
+            where: {
+                nguoi_dung_id: +user_id
+            },
+            data: newData
+        })
+        res.status(200).send("Your profile has been updated successfully!")
+    } catch (err) {
+        res.send(`Error: ${err}`)
+    }
+}
 
 export {
     getUserInfo,
     getStoredPhotoList,
-    getPostedPhotoList
+    getPostedPhotoList,
+    updateUser
 }

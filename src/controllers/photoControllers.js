@@ -72,16 +72,25 @@ const getComment = async (req, res) => {
 
 // lấy thông tin đã lưu hình này chưa theo id ảnh 
 const getStoredPhoto = async (req, res) => {
+    const { photoId } = req.params;
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
     try {
-        const ISStoredPhoto = await prisma.hinh_anh.findFirst({
+        const IsStoredPhoto = await prisma.luu_anh.findFirst({
             where: {
-                hinh_id: prisma.luu_anh.hinh_id
+                nguoi_dung_id: +user_id,
+                AND: {
+                    hinh_id: +photoId
+                }
             }
         })
+        if (IsStoredPhoto) {
+            res.status(200).send("This photo has been saved in your storage")
+            return
+        }
+        res.status(200).send("This photo has been not  saved yet in your storage")
     } catch (err) {
-
+        res.status(404).send(`Error: ${err}`)
     }
 }
 
@@ -108,6 +117,7 @@ const createComment = async (req, res) => {
     }
 }
 
+// xóa ảnh đã tạo theo id ảnh
 const deletePostedPhoto = async (req, res) => {
     const { photoId } = req.params;
     const { token } = req.headers;
@@ -154,11 +164,34 @@ const deletePostedPhoto = async (req, res) => {
     }
 }
 
+// thêm một ảnh của user
+const addPhoto = async (req, res) => {
+    const { token } = req.headers;
+    const { photoName, photoLink, desc } = req.body;
+    const { user_id } = checkToken(token).data
+    try {
+        const newPhoto = {
+            ten_hinh: photoName,
+            duong_dan: photoLink,
+            mo_ta: desc,
+            nguoi_dung_id: +user_id
+        }
+        await prisma.hinh_anh.create({
+            data: newPhoto
+        })
+        res.status(201).send("Your photo has been posted successfully!")
+    } catch (err) {
+        res.status(404).send(`Error: ${err}`)
+    }
+}
+
 export {
     getPhotoList,
     searchPhotoList,
     getPhotoInfo,
     getComment,
+    getStoredPhoto,
     createComment,
-    deletePostedPhoto
+    deletePostedPhoto,
+    addPhoto
 }
