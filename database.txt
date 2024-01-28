@@ -1,0 +1,136 @@
+# tạo table nguoi_dung
+CREATE TABLE nguoi_dung (
+nguoi_dung_id INT PRIMARY KEY AUTO_INCREMENT,
+email varchar(100),
+mat_khau varchar(100),
+ho_ten varchar(100),
+tuoi INT,
+anh_dai_dien varchar(255)
+)
+
+INSERT INTO nguoi_dung(email, mat_khau, ho_ten, tuoi, anh_dai_dien) VALUES
+('user1@example.com', 'password1', 'Người Dùng 1', 25, '/images/avatar1.jpg'),
+('user2@example.com', 'password2', 'Người Dùng 2', 30, '/images/avatar2.jpg'),
+('user3@example.com', 'password3', 'Người Dùng 3', 22, '/images/avatar3.jpg'),
+('user4@example.com', 'password4', 'Người Dùng 4', 28, '/images/avatar4.jpg'),
+('user5@example.com', 'password5', 'Người Dùng 5', 35, '/images/avatar5.jpg'),
+('user6@example.com', 'password6', 'Người Dùng 6', 27, '/images/avatar6.jpg'),
+('user7@example.com', 'password7', 'Người Dùng 7', 31, '/images/avatar7.jpg'),
+('user8@example.com', 'password8', 'Người Dùng 8', 29, '/images/avatar8.jpg'),
+('user9@example.com', 'password9', 'Người Dùng 9', 26, '/images/avatar9.jpg'),
+('user10@example.com', 'password10', 'Người Dùng 10', 32, '/images/avatar10.jpg');
+
+# select data
+SELECT * FROM nguoi_dung;
+
+# tạo table hinh_anh
+CREATE TABLE hinh_anh (
+hinh_id INT PRIMARY KEY AUTO_INCREMENT,
+ten_hinh varchar(100),
+duong_dan varchar(100),
+mo_ta varchar(100),
+nguoi_dung_id INT,
+FOREIGN KEY(nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id) 
+)
+
+INSERT INTO hinh_anh (ten_hinh, duong_dan, mo_ta, nguoi_dung_id) VALUES
+  ('Hình 1', '/images/image1.jpg', 'Mô tả hình 1', 1),
+  ('Hình 2', '/images/image2.jpg', 'Mô tả hình 2', 2),
+  ('Hình 3', '/images/image3.jpg', 'Mô tả hình 3', 3),
+  ('Hình 4', '/images/image4.jpg', 'Mô tả hình 4', 4),
+  ('Hình 5', '/images/image5.jpg', 'Mô tả hình 5', 5),
+  ('Hình 6', '/images/image6.jpg', 'Mô tả hình 6', 6),
+  ('Hình 7', '/images/image7.jpg', 'Mô tả hình 7', 7),
+  ('Hình 8', '/images/image8.jpg', 'Mô tả hình 8', 8),
+  ('Hình 9', '/images/image9.jpg', 'Mô tả hình 9', 9),
+  ('Hình 10', '/images/image10.jpg', 'Mô tả hình 10', 10),
+  ('Hình 11', '/images/image11.jpg', 'Mô tả hình 11', 11),
+  ('Hình 12', '/images/image12.jpg', 'Mô tả hình 12', 12),
+  ('Hình 13', '/images/image13.jpg', 'Mô tả hình 13', 13),
+  ('Hình 14', '/images/image14.jpg', 'Mô tả hình 14', 14),
+  ('Hình 15', '/images/image15.jpg', 'Mô tả hình 15', 15),
+  ('Hình 16', '/images/image16.jpg', 'Mô tả hình 16', 11),
+  ('Hình 17', '/images/image17.jpg', 'Mô tả hình 17', 13),
+  ('Hình 18', '/images/image18.jpg', 'Mô tả hình 18', 8),
+  ('Hình 19', '/images/image19.jpg', 'Mô tả hình 19', 3),
+  ('Hình 20', '/images/image20.jpg', 'Mô tả hình 20', 2);
+
+# select data
+SELECT * FROM hinh_anh;
+
+# tạo table binh_luan
+CREATE TABLE binh_luan (
+binh_luan_id INT PRIMARY KEY AUTO_INCREMENT,
+nguoi_dung_id INT,
+FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id),
+hinh_id iNT,
+FOREIGN KEY (hinh_id) REFERENCES hinh_anh(hinh_id),
+ngay_binh_luan DATE,
+noi_dung varchar(255)
+)
+
+INSERT INTO binh_luan (nguoi_dung_id, hinh_id, ngay_binh_luan, noi_dung) VALUES
+  (1, 1, '2023-01-01', 'Bình luận 1 cho Hình 1'),
+  (2, 1, '2023-01-02', 'Bình luận 2 cho Hình 1'),
+  (3, 2, '2023-01-03', 'Bình luận 1 cho Hình 2'),
+  (4, 3, '2023-01-04', 'Bình luận 1 cho Hình 3'),
+  (5, 4, '2023-01-05', 'Bình luận 1 cho Hình 4'),
+  (6, 5, '2023-01-06', 'Bình luận 1 cho Hình 5'),
+  (7, 6, '2023-01-07', 'Bình luận 1 cho Hình 6'),
+  (8, 7, '2023-01-08', 'Bình luận 1 cho Hình 7'),
+  (9, 8, '2023-01-09', 'Bình luận 1 cho Hình 8'),
+  (10, 5, '2023-01-10', 'Bình luận 1 cho Hình 9'),
+  (11, 10, '2023-01-11', 'Bình luận 1 cho Hình 10'),
+  (12, 11, '2023-01-12', 'Bình luận 1 cho Hình 11'),
+  (13, 12, '2023-01-13', 'Bình luận 1 cho Hình 12'),
+  (14, 5, '2023-01-14', 'Bình luận 1 cho Hình 13'),
+  (15, 14, '2023-01-15', 'Bình luận 1 cho Hình 14'),
+  (1, 15, '2023-01-16', 'Bình luận 1 cho Hình 15'),
+  (2, 1, '2023-01-17', 'Bình luận 3 cho Hình 1'),
+  (3, 2, '2023-01-18', 'Bình luận 2 cho Hình 2'),
+  (4, 3, '2023-01-19', 'Bình luận 2 cho Hình 3'),
+  (5, 4, '2023-01-20', 'Bình luận 2 cho Hình 4'),
+  (6, 5, '2023-01-21', 'Bình luận 2 cho Hình 5'),
+  (7, 3, '2023-01-22', 'Bình luận 2 cho Hình 6'),
+  (8, 7, '2023-01-23', 'Bình luận 2 cho Hình 7'),
+  (9, 8, '2023-01-24', 'Bình luận 2 cho Hình 8'),
+  (10, 9, '2023-01-25', 'Bình luận 2 cho Hình 9');
+
+# select data
+SELECT * FROM binh_luan;
+
+# tạo table luu_anh
+CREATE TABLE luu_anh (
+luu_anh_id INT PRIMARY KEY AUTO_INCREMENT,
+nguoi_dung_id INT,
+FOREIGN KEY (nguoi_dung_id) REFERENCES nguoi_dung(nguoi_dung_id),
+hinh_id INT,
+FOREIGN KEY (hinh_id) REFERENCES hinh_anh(hinh_id),
+ngay_luu DATE
+)
+
+INSERT INTO luu_anh (nguoi_dung_id, hinh_id, ngay_luu) VALUES
+  (1, 1, '2023-01-01'),
+  (2, 2, '2023-01-02'),
+  (3, 3, '2023-01-03'),
+  (4, 4, '2023-01-04'),
+  (5, 5, '2023-01-05'),
+  (6, 6, '2023-01-06'),
+  (7, 7, '2023-01-07'),
+  (8, 8, '2023-01-08'),
+  (9, 9, '2023-01-09'),
+  (10, 10, '2023-01-10'),
+  (11, 11, '2023-01-11'),
+  (12, 12, '2023-01-12'),
+  (13, 13, '2023-01-13'),
+  (14, 14, '2023-01-14'),
+  (15, 15, '2023-01-15'),
+  (1, 16, '2023-01-16'),
+  (2, 17, '2023-01-17'),
+  (3, 18, '2023-01-18'),
+  (4, 19, '2023-01-19'),
+  (5, 20, '2023-01-20');
+
+# select data
+SELECT * FROM luu_anh;
+
