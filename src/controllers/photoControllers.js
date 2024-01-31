@@ -76,15 +76,12 @@ const getStoredPhoto = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
     try {
-        const IsStoredPhoto = await prisma.luu_anh.findFirst({
+        const storedPhoto = await prisma.luu_anh.findFirst({
             where: {
-                nguoi_dung_id: +user_id,
-                AND: {
-                    hinh_id: +photoId
-                }
+                hinh_id: +photoId
             }
         })
-        if (IsStoredPhoto) {
+        if (storedPhoto.nguoi_dung_id == user_id) {
             res.status(200).send("This photo has been saved in your storage")
             return
         }
@@ -124,17 +121,14 @@ const deletePostedPhoto = async (req, res) => {
     const { user_id } = checkToken(token).data
 
     try {
-        const deletedPhoto = await prisma.hinh_anh.findMany({
+        const deletedPhoto = await prisma.hinh_anh.findFirst({
             where: {
-                hinh_id: +photoId,
-                AND: {
-                    nguoi_dung_id: +user_id
-                }
+                hinh_id: +photoId
             }
         })
 
         // kiểm tra ảnh user muốn xóa có phải do user tạo
-        if (!deletedPhoto[0]) {
+        if (deletedPhoto.nguoi_dung_id !== user_id) {
             return res.send("Unauthorized!!")
         }
 

@@ -19,7 +19,8 @@ const login = async (req, res) => {
             const checkPassword = bcrypt.compareSync(password, data.mat_khau)
             if (checkPassword) {
                 const payload = {
-                    user_id: data.nguoi_dung_id
+                    user_id: data.nguoi_dung_id,
+                    email: data.email
                 }
                 let token = createToken(payload);
                 res.status(200).send(token);
@@ -73,35 +74,3 @@ export {
     signUp
 }
 
-// const login = async (req, res) => {
-//     try {
-//         const { nguoi_dung_id, password } = req.body;
-//         console.log(nguoi_dung_id, password);
-//         const data = await prisma.nguoi_dung.findUnique(
-//             {
-//                 where: {
-//                     // email: email
-//                     nguoi_dung_id: nguoi_dung_id
-//                 }
-//             }
-//         )
-//         console.log(data);
-//         if (data) {
-//             const checkPassword = bcrypt.compareSync(password, data.mat_khau)
-//             if (checkPassword) {
-//                 const payload = {
-//                     user_id: data.nguoi_dung_id
-//                 }
-//                 let token = createToken(payload);
-//                 res.status(200).send(token);
-//             } else {
-//                 res.status(400).send("Passworđ incorrect!")
-//             }
-//         } else {
-//             res.status(404).send("login fail!")
-//         }
-
-//     } catch (err) {
-//         res.send(`Error: ${err}`)
-//     }
-// }

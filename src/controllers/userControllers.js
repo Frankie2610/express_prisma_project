@@ -3,6 +3,7 @@ import { checkToken } from '../config/jwt.js';
 
 const prisma = new PrismaClient()
 
+// lấy thông tin user
 const getUserInfo = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
@@ -20,6 +21,7 @@ const getUserInfo = async (req, res) => {
     }
 }
 
+// lấy danh sách ảnh đã lưu theo user_id
 const getStoredPhotoList = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
