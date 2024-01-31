@@ -45,7 +45,6 @@ const getPhotoInfo = async (req, res) => {
                 }
             }
         )
-        console.log(photoInfo);
         res.status(200).send(photoInfo)
     } catch (err) {
         res.send(`Error: ${err}`)
@@ -55,7 +54,6 @@ const getPhotoInfo = async (req, res) => {
 // lấy thông tin bình luận theo id ảnh
 const getComment = async (req, res) => {
     const { photoId } = req.params;
-    console.log(photoId);
     try {
         const comment = await prisma.binh_luan.findMany(
             {

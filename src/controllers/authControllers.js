@@ -39,16 +39,14 @@ const login = async (req, res) => {
 const signUp = async (req, res) => {
     try {
         const { email, password, username, age, avatar } = req.body;
-        const data = await prisma.nguoi_dung.findMany(
+        const data = await prisma.nguoi_dung.findFirst(
             {
                 where: {
                     email: email
-                    // nguoi_dung_id: nguoi_dung_id
                 }
             }
         )
-        console.log(data);
-        if (data[0]) {
+        if (data) {
             res.status(400).send("User has existed!");
             return
         }
