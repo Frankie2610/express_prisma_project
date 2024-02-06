@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "af9ab461-f8ce-4487-a8db-d661ac12bf6c",
+		"name": "Capstone_Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26018096"
+	},
+	"item": [
+		{
+			"name": "Trang chủ",
+			"item": [
+				{
+					"name": "tìm kiếm danh sách ảnh theo tên",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/search-photo/hình 2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"search-photo",
+								"hình 2"
+							],
+							"query": [
+								{
+									"key": "photoName",
+									"value": "Hình 1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách ảnh về",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/get-photo-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"get-photo-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chi tiết",
+			"item": [
+				{
+					"name": "Lấy thông tin ảnh và người tạo ảnh bằng id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/get-photo-info/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"get-photo-info",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin bình luận theo id ảnh.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/get-comment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"get-comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST để lưu thông tin bình luận của người dùng với hình ảnh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\":\"this picture is greatly elegant\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/photo/create-comment/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"create-comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin đã lưu hình này chưa theo id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA2NjkyNDYzLCJleHAiOjE3MzgyNTAwNjN9.TxDLCstD95ji6eHGGxTBHPnB9HkdCvSN4ZzKLfL8AEc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/get-store-photo/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"get-store-photo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang quản lý ảnh",
+			"item": [
+				{
+					"name": "Lấy thông tin user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJpYXQiOjE3MDYzNTM4MjQsImV4cCI6MTczNzkxMTQyNH0.sVr2FxJHw1bS4dfMclROf9l7JanFauV4MeC5CdTks7c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/user/get-user-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"get-user-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách ảnh đã lưu theo user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA2NjkyNDYzLCJleHAiOjE3MzgyNTAwNjN9.TxDLCstD95ji6eHGGxTBHPnB9HkdCvSN4ZzKLfL8AEc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/user/get-stored-photo-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"get-stored-photo-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách ảnh đã tạo theo user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJpYXQiOjE3MDYzNTM4MjQsImV4cCI6MTczNzkxMTQyNH0.sVr2FxJHw1bS4dfMclROf9l7JanFauV4MeC5CdTks7c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/user/get-posted-photo-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"get-posted-photo-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa ảnh đã tạo theo id ảnh",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJ1c2VyMTJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDY2OTEzMTIsImV4cCI6MTczODI0ODkxMn0.9PRTNvkuJarY83oeZKEJL-t9O_QkYDXM705IZZ4eZI0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/photo/delete-photo/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"delete-photo",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang thêm ảnh",
+			"item": [
+				{
+					"name": "thêm một ảnh của user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MDY0NjE1NjIsImV4cCI6MTczODAxOTE2Mn0.czHmgxJLDgIsZhLyUvTCpeapMnQuZmZY-Ju91JEv5gA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"photoName\":\"Ảnh đại diện\",\n    \"photoLink\":\"/image/avatar/user\",\n    \"desc\":\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/photo/add-photo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"photo",
+								"add-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chỉnh sửa thông tin cá nhân",
+			"item": [
+				{
+					"name": "Update thông tin cá nhân của user.",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MDY0NjE1NjIsImV4cCI6MTczODAxOTE2Mn0.czHmgxJLDgIsZhLyUvTCpeapMnQuZmZY-Ju91JEv5gA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user1111@example.com\",\n    \"password\":\"1234\",\n    \"username\":\"Mỹ Tiên\",\n    \"age\":31,\n    \"avatar\":\"/avatar_user_1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/update-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user10@example.com\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user15@example.com\",\n    \"password\":\"1234\",\n    \"username\":\"Mỹ Duyên\",\n    \"age\":31,\n    \"avatar\":\"/avatar_user_15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
