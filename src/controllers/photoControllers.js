@@ -79,11 +79,15 @@ const getStoredPhoto = async (req, res) => {
                 hinh_id: +photoId
             }
         })
+        if (!storedPhoto) {
+            res.status(404).send("Photo not found!")
+            return
+        }
         if (storedPhoto.nguoi_dung_id == user_id) {
             res.status(200).send("This photo has been saved in your storage")
             return
         }
-        res.status(200).send("This photo has been not  saved yet in your storage")
+        res.status(200).send("This photo has been not saved yet in your storage")
     } catch (err) {
         res.status(404).send(`Error: ${err}`)
     }
