@@ -42,13 +42,6 @@ const getPostedPhotoList = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
     try {
-        // const newPhoto = {
-        //     ten_hinh: photoName,
-        //     duong_dan: photoLink,
-        //     mo_ta: desc,
-        //     nguoi_dung_id: +userId
-
-        // }
         const photo = await prisma.hinh_anh.findMany({
             where: {
                 nguoi_dung_id: +user_id
