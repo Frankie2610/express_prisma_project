@@ -18,13 +18,17 @@ const getPhotoList = async (req, res) => {
 const searchPhotoList = async (req, res) => {
     const { photoName } = req.params
     try {
-        let photoList = await prisma.hinh_anh.findMany(
+        const photoList = await prisma.hinh_anh.findMany(
             {
                 where: {
                     ten_hinh: photoName
                 }
             }
         )
+        // nếu mảng photoList trả về rỗng => photo not exist
+        if (!photoList[0]) {
+            return res.status(404).send("Photo not found")
+        }
         res.status(200).send(photoList)
     } catch (err) {
         res.send(`Error: ${err}`)
@@ -45,6 +49,9 @@ const getPhotoInfo = async (req, res) => {
                 }
             }
         )
+        if (!photoInfo) {
+            return res.status(404).send("Photo not found")
+        }
         res.status(200).send(photoInfo)
     } catch (err) {
         res.send(`Error: ${err}`)
@@ -62,6 +69,10 @@ const getComment = async (req, res) => {
                 }
             }
         )
+        // nếu mảng comment trả về rỗng => không tồn tại
+        if (!comment[0]) {
+            return res.status(404).send("Photo not found")
+        }
         res.status(200).send(comment)
     } catch (err) {
         res.send(`Error: ${err}`)
@@ -82,8 +93,7 @@ const getStoredPhoto = async (req, res) => {
             }
         })
         if (!storedPhoto) {
-            res.status(404).send("Photo not found!")
-            return
+            return res.status(404).send("Photo not found!")
         }
         res.status(200).send("This photo has been saved in your storage")
     } catch (err) {
