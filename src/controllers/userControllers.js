@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { checkToken } from '../config/jwt.js';
+import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient()
 
@@ -58,10 +59,12 @@ const updateUser = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
     const { email, password, username, age, avatar } = req.body
+    // encode lại password
+    const encodePassword = bcrypt.hashSync(password, 10);
     try {
         const newData = {
             email: email,
-            mat_khau: password,
+            mat_khau: encodePassword,
             ho_ten: username,
             tuoi: age,
             anh_dai_dien: avatar

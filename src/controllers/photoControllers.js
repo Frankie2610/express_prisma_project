@@ -74,20 +74,18 @@ const getStoredPhoto = async (req, res) => {
     const { token } = req.headers;
     const { user_id } = checkToken(token).data
     try {
+        // tìm tấm hình với id ? đã được user gửi request lưu chưa?
         const storedPhoto = await prisma.luu_anh.findFirst({
             where: {
-                hinh_id: +photoId
+                hinh_id: +photoId,
+                nguoi_dung_id: +user_id
             }
         })
         if (!storedPhoto) {
             res.status(404).send("Photo not found!")
             return
         }
-        if (storedPhoto.nguoi_dung_id == user_id) {
-            res.status(200).send("This photo has been saved in your storage")
-            return
-        }
-        res.status(200).send("This photo has been not saved yet in your storage")
+        res.status(200).send("This photo has been saved in your storage")
     } catch (err) {
         res.status(404).send(`Error: ${err}`)
     }
@@ -129,9 +127,13 @@ const deletePostedPhoto = async (req, res) => {
             }
         })
 
+        if (!deletedPhoto) {
+            return res.status(404).send("This photo is not exist!")
+        }
+
         // kiểm tra ảnh user muốn xóa có phải do user tạo
         if (deletedPhoto.nguoi_dung_id !== user_id) {
-            return res.send("Unauthorized!!")
+            return res.status(400).send("Unauthorized!!")
         }
 
         // xóa bình luận trên ảnh
