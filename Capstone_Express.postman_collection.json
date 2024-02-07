@@ -16,7 +16,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
@@ -50,7 +50,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
@@ -81,12 +81,12 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/photo/get-photo-info/2",
+							"raw": "http://localhost:8081/photo/get-photo-info/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,7 +95,7 @@
 							"path": [
 								"photo",
 								"get-photo-info",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -108,7 +108,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOSwiZW1haWwiOiJjeWJlcnNvZnRAZWR1LmNvbSIsImlhdCI6MTcwNzI5ODc4MiwiZXhwIjoxNzM4ODU2MzgyfQ.CYutCA8lRk864KxfY3gw-arastOcQx28_iv-zdAbxMg",
 								"type": "text"
 							}
 						],
@@ -135,13 +135,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNiwiaWF0IjoxNzA2Mzc2NjUxLCJleHAiOjE3Mzc5MzQyNTF9.NoFZ7JqqyAR0dl5-nPBXQYPcUJnnAny1uDnE88FjEj0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"comment\":\"this picture is greatly elegant\"\n}",
+							"raw": "{\n    \"comment\":\"hôm nay là 28 tết\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -171,12 +171,12 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA2NjkyNDYzLCJleHAiOjE3MzgyNTAwNjN9.TxDLCstD95ji6eHGGxTBHPnB9HkdCvSN4ZzKLfL8AEc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/photo/get-stored-photo/3",
+							"raw": "http://localhost:8081/photo/get-stored-photo/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -185,7 +185,7 @@
 							"path": [
 								"photo",
 								"get-stored-photo",
-								"3"
+								"13"
 							]
 						}
 					},
@@ -203,7 +203,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJpYXQiOjE3MDYzNTM4MjQsImV4cCI6MTczNzkxMTQyNH0.sVr2FxJHw1bS4dfMclROf9l7JanFauV4MeC5CdTks7c",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
@@ -255,7 +255,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo4LCJpYXQiOjE3MDYzNTM4MjQsImV4cCI6MTczNzkxMTQyNH0.sVr2FxJHw1bS4dfMclROf9l7JanFauV4MeC5CdTks7c",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
@@ -281,7 +281,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJ1c2VyMTJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MDY2OTEzMTIsImV4cCI6MTczODI0ODkxMn0.9PRTNvkuJarY83oeZKEJL-t9O_QkYDXM705IZZ4eZI0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
@@ -313,13 +313,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MDY0NjE1NjIsImV4cCI6MTczODAxOTE2Mn0.czHmgxJLDgIsZhLyUvTCpeapMnQuZmZY-Ju91JEv5gA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"photoName\":\"Ảnh đại diện\",\n    \"photoLink\":\"/image/avatar/user\",\n    \"desc\":\"test\"\n}",
+							"raw": "{\n    \"photoName\":\"Ảnh đại diện của user 20\",\n    \"photoLink\":\"/image/avatar/user\",\n    \"desc\":\"user20\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -353,13 +353,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MDY0NjE1NjIsImV4cCI6MTczODAxOTE2Mn0.czHmgxJLDgIsZhLyUvTCpeapMnQuZmZY-Ju91JEv5gA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMCwiZW1haWwiOiJnaWFxdXllbnZhbkBlZHUuY29tIiwiaWF0IjoxNzA3MzAwMjk3LCJleHAiOjE3Mzg4NTc4OTd9.CKIr2qRvtmCtbUR-uunQqdUDaxMsE9u-lOMBYuoM3z0",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"user1111@example.com\",\n    \"password\":\"1234\",\n    \"username\":\"Mỹ Tiên\",\n    \"age\":31,\n    \"avatar\":\"/avatar_user_1\"\n}",
+							"raw": "{\n    \"email\":\"giaquyen@edu.com\",\n    \"password\":\"12345\",\n    \"username\":\"GiaQuyenVan\",\n    \"age\":24,\n    \"avatar\":\"/avatar_user_20\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -393,7 +393,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"user10@example.com\",\n    \"password\":\"1234\"\n}",
+							"raw": "{\n    \"email\":\"user3@example.com\",\n    \"password\":\"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -416,13 +416,13 @@
 					"response": []
 				},
 				{
-					"name": "signUp",
+					"name": "signup",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"user15@example.com\",\n    \"password\":\"1234\",\n    \"username\":\"Mỹ Duyên\",\n    \"age\":31,\n    \"avatar\":\"/avatar_user_15\"\n}",
+							"raw": "{\n    \"email\":\"vangiaquyen@hcmut.edu.vn\",\n    \"password\":\"1234\",\n    \"username\":\"GiaQuyen\",\n    \"age\":23,\n    \"avatar\":\"/avatar_user_21\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -430,7 +430,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/auth/signUp",
+							"raw": "http://localhost:8081/auth/signup",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -438,7 +438,7 @@
 							"port": "8081",
 							"path": [
 								"auth",
-								"signUp"
+								"signup"
 							]
 						}
 					},

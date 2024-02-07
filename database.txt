@@ -8,17 +8,7 @@ tuoi INT,
 anh_dai_dien varchar(255)
 )
 
-INSERT INTO nguoi_dung(email, mat_khau, ho_ten, tuoi, anh_dai_dien) VALUES
-('user1@example.com', 'password1', 'Người Dùng 1', 25, '/images/avatar1.jpg'),
-('user2@example.com', 'password2', 'Người Dùng 2', 30, '/images/avatar2.jpg'),
-('user3@example.com', 'password3', 'Người Dùng 3', 22, '/images/avatar3.jpg'),
-('user4@example.com', 'password4', 'Người Dùng 4', 28, '/images/avatar4.jpg'),
-('user5@example.com', 'password5', 'Người Dùng 5', 35, '/images/avatar5.jpg'),
-('user6@example.com', 'password6', 'Người Dùng 6', 27, '/images/avatar6.jpg'),
-('user7@example.com', 'password7', 'Người Dùng 7', 31, '/images/avatar7.jpg'),
-('user8@example.com', 'password8', 'Người Dùng 8', 29, '/images/avatar8.jpg'),
-('user9@example.com', 'password9', 'Người Dùng 9', 26, '/images/avatar9.jpg'),
-('user10@example.com', 'password10', 'Người Dùng 10', 32, '/images/avatar10.jpg');
+--  Data nguoi_dung tạo thông qua chức năng sign-up
 
 # select data
 SELECT * FROM nguoi_dung;
