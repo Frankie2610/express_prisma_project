@@ -30,7 +30,7 @@ const apiKey = async (req, res, next) => {
             return;
         }
         const { user_id } = verifyToken.data
-        const checkUser = await prisma.nguoi_dung.findMany(
+        const checkUser = await prisma.nguoi_dung.findFirst(
             {
                 where: {
                     nguoi_dung_id: user_id
