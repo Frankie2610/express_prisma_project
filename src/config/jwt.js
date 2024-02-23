@@ -3,11 +3,11 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const createToken = (data) => {
-    return jwt.sign(data, "NODE38_CAPSTONE", { expiresIn: "1y" })
+    return jwt.sign(data, "SECRET_KEY", { expiresIn: "1y" })
 }
 
 const checkToken = (token) => {
-    return jwt.verify(token, "NODE38_CAPSTONE", (err, decoded) => {
+    return jwt.verify(token, "SECRET_KEY", (err, decoded) => {
         if (err) {
             return {
                 statusCode: 401,

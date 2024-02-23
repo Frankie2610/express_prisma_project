@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { createToken } from '../config/jwt.js';
 
 const prisma = new PrismaClient()
+const BCRYPT_COST_FACTOR = 10;
 
 const login = async (req, res) => {
     try {
@@ -50,7 +51,7 @@ const signUp = async (req, res) => {
             res.status(400).send("User has existed!");
             return
         }
-        const encodePassword = bcrypt.hashSync(password, 10);
+        const encodePassword = bcrypt.hashSync(password, BCRYPT_COST_FACTOR);
         const newUser = {
             email,
             mat_khau: encodePassword,
